@@ -24,3 +24,12 @@ variable "machine_type" {
 variable "instance_zone" {
   type = string
 }
+
+variable "boot_disk_size" {
+  type = number
+}
+
+variable "boot_disk_type" {
+  type    = string
+  default = "pd-standard"
+}
