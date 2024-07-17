@@ -5,7 +5,7 @@ resource "google_compute_instance" "default" {
 
   boot_disk {
     initialize_params {
-      image = data.google_compute_image.default.self_link
+      image = var.boot_disk_image
       size  = var.boot_disk_size
       type  = var.boot_disk_type
     }

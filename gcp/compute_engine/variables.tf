@@ -1,6 +1,6 @@
-variable "compute_image_family" {
+variable "boot_disk_image" {
   type    = string
-  default = "rocky-linux-9"
+  default = "ubuntu-2404-lts-amd64"
 }
 
 variable "compute_network_name" {
