@@ -3,6 +3,16 @@ variable "boot_disk_image" {
   default = "ubuntu-2404-lts-amd64"
 }
 
+variable "is_preemptible" {
+  type    = bool
+  default = false
+}
+
+variable "instance_termination_action" {
+  type    = string
+  default = "STOP"
+}
+
 variable "compute_network_name" {
   type    = string
   default = "default"

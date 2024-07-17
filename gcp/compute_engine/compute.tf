@@ -15,4 +15,11 @@ resource "google_compute_instance" "default" {
     network    = data.google_compute_network.default.name
     subnetwork = data.google_compute_subnetwork.default.name
   }
+
+  scheduling {
+    preemptible                 = var.is_preemptible
+    automatic_restart           = var.is_preemptible ? false : true
+    provisioning_model          = var.is_preemptible ? "SPOT" : "STANDARD"
+    instance_termination_action = var.is_preemptible ? var.instance_termination_action : null
+  }
 }
