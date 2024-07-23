@@ -1,6 +1,16 @@
-variable "compute_image_family" {
+variable "boot_disk_image" {
   type    = string
-  default = "rocky-linux-9"
+  default = "ubuntu-2404-lts-amd64"
+}
+
+variable "is_preemptible" {
+  type    = bool
+  default = false
+}
+
+variable "instance_termination_action" {
+  type    = string
+  default = "STOP"
 }
 
 variable "compute_network_name" {
@@ -23,4 +33,13 @@ variable "machine_type" {
 
 variable "instance_zone" {
   type = string
+}
+
+variable "boot_disk_size" {
+  type = number
+}
+
+variable "boot_disk_type" {
+  type    = string
+  default = "pd-standard"
 }

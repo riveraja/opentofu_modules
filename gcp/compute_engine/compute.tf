@@ -4,13 +4,22 @@ resource "google_compute_instance" "default" {
   zone         = var.instance_zone
 
   boot_disk {
+    auto_delete = true
     initialize_params {
-      image = data.google_compute_image.default.self_link
+      image = var.boot_disk_image
+      size  = var.boot_disk_size
+      type  = var.boot_disk_type
     }
   }
 
   network_interface {
-    network    = data.google_compute_network.default.name
-    subnetwork = data.google_compute_subnetwork.default.name
+    subnetwork = data.google_compute_subnetwork.default.id
+  }
+
+  scheduling {
+    preemptible                 = var.is_preemptible
+    automatic_restart           = var.is_preemptible ? false : true
+    provisioning_model          = var.is_preemptible ? "SPOT" : "STANDARD"
+    instance_termination_action = var.is_preemptible ? var.instance_termination_action : null
   }
 }
