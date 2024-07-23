@@ -4,6 +4,7 @@ resource "google_compute_instance" "default" {
   zone         = var.instance_zone
 
   boot_disk {
+    auto_delete = true
     initialize_params {
       image = var.boot_disk_image
       size  = var.boot_disk_size
@@ -12,8 +13,7 @@ resource "google_compute_instance" "default" {
   }
 
   network_interface {
-    network    = data.google_compute_network.default.name
-    subnetwork = data.google_compute_subnetwork.default.name
+    subnetwork = data.google_compute_subnetwork.default.id
   }
 
   scheduling {
