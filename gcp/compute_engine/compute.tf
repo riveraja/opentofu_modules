@@ -16,6 +16,11 @@ resource "google_compute_instance" "default" {
     subnetwork = data.google_compute_subnetwork.default.id
   }
 
+  service_account {
+    email  = var.service_account_email
+    scopes = var.service_account_scopes
+  }
+
   scheduling {
     preemptible                 = var.is_preemptible
     automatic_restart           = var.is_preemptible ? false : true
