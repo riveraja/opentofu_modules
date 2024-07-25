@@ -43,3 +43,12 @@ variable "boot_disk_type" {
   type    = string
   default = "pd-standard"
 }
+
+variable "service_account_email" {
+  type = string
+}
+
+variable "service_account_scopes" {
+  type    = list(string)
+  default = ["cloud-platform"]
+}
