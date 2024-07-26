@@ -13,11 +13,6 @@ variable "instance_termination_action" {
   default = "STOP"
 }
 
-variable "compute_network_name" {
-  type    = string
-  default = "default"
-}
-
 variable "compute_subnetwork_name" {
   type    = string
   default = "default"
