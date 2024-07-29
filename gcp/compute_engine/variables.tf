@@ -13,9 +13,14 @@ variable "instance_termination_action" {
   default = "STOP"
 }
 
-variable "compute_subnetwork_name" {
-  type    = string
-  default = "default"
+variable "google_compute_subnetwork" {
+  type = string
+  # default = "default"
+}
+
+variable "google_compute_network" {
+  type = string
+  # default = "default"
 }
 
 variable "instance_name" {
