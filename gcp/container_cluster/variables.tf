@@ -70,14 +70,12 @@ variable "cluster_description" {
   default = ""
 }
 
-variable "google_compute_network_name" {
-  type    = string
-  default = "default"
+variable "google_compute_network" {
+  type = string
 }
 
 variable "google_compute_subnetwork" {
-  type    = string
-  default = "default"
+  type = string
 }
 
 variable "release_channel" {

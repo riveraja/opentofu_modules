@@ -16,6 +16,6 @@ resource "google_container_cluster" "default" {
   }
 
   networking_mode = "VPC_NATIVE"
-  network         = data.google_compute_network.vpc.name
   subnetwork      = data.google_compute_subnetwork.subnetwork.name
+  network         = var.google_compute_network
 }
