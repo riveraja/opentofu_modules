@@ -13,6 +13,7 @@ resource "google_compute_instance" "default" {
   }
 
   network_interface {
+    network    = data.google_compute_network.default.id
     subnetwork = data.google_compute_subnetwork.default.id
     access_config {
       network_tier = "PREMIUM"
