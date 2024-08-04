@@ -31,4 +31,8 @@ resource "google_compute_instance" "default" {
     provisioning_model          = var.is_preemptible ? "SPOT" : "STANDARD"
     instance_termination_action = var.is_preemptible ? var.instance_termination_action : null
   }
+
+  metadata = {
+    ssh_keys = var.ssh_keys
+  }
 }

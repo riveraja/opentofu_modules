@@ -52,3 +52,7 @@ variable "service_account_scopes" {
   type    = list(string)
   default = ["cloud-platform"]
 }
+
+variable "ssh_keys" {
+  type = string
+}
