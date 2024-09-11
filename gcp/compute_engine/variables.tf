@@ -56,3 +56,7 @@ variable "service_account_scopes" {
 variable "ssh_keys" {
   type = string
 }
+
+variable "compute_tags" {
+  type = list(string)
+}
