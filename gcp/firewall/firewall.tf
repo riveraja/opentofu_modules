@@ -11,6 +11,6 @@ resource "google_compute_firewall" "firewall" {
     }
   }
 
-  source_tags = var.source_tags
-  target_tags = var.target_tags
+  source_ranges = var.source_ranges
+  target_tags   = var.target_tags
 }

@@ -57,6 +57,6 @@ variable "ssh_keys" {
   type = string
 }
 
-variable "compute_tags" {
+variable "network_tags" {
   type = list(string)
 }
