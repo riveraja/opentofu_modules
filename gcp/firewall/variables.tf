@@ -19,7 +19,7 @@ variable "allow_list" {
   default = []
 }
 
-variable "source_tags" {
+variable "source_ranges" {
   type = list(string)
 }
 

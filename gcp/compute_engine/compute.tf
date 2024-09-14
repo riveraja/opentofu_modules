@@ -36,5 +36,5 @@ resource "google_compute_instance" "default" {
     ssh_keys = var.ssh_keys
   }
 
-  tags = var.compute_tags
+  tags = var.network_tags
 }
