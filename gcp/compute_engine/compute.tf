@@ -33,7 +33,7 @@ resource "google_compute_instance" "default" {
   }
 
   metadata = {
-    ssh_keys = var.ssh_keys
+    ssh-keys = var.ssh_keys
   }
 
   tags = var.network_tags
